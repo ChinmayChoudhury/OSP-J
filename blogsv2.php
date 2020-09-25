@@ -37,7 +37,7 @@
 								<p class='card-text'>",html_entity_decode(trim($row_arr[0]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[0]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[0]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[0]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[0]['post_date']))," by <cite title='Source Title'>",$row_arr[0]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[3]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[3]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[3]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[3]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[3]['post_date']))," by <cite title='Source Title'>",$row_arr[3]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[6]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[6]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[6]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[6]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[6]['post_date']))," by <cite title='Source Title'>",$row_arr[6]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -76,7 +76,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[1]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[1]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[1]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[1]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[1]['post_date']))," by <cite title='Source Title'>",$row_arr[1]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[4]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[4]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[4]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[4]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[4]['post_date']))," by <cite title='Source Title'>",$row_arr[4]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -102,7 +102,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[7]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[7]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[7]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[7]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[7]['post_date']))," by <cite title='Source Title'>",$row_arr[7]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -115,7 +115,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[2]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[2]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[2]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[2]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[2]['post_date']))," by <cite title='Source Title'>",$row_arr[2]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -128,7 +128,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[5]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[5]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[5]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[5]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[5]['post_date']))," by <cite title='Source Title'>",$row_arr[5]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
@@ -141,7 +141,7 @@
 							<p class='card-text'>",html_entity_decode(trim($row_arr[8]['post_incerpt'])),"</p>
 						</a>
 							<footer class='blockquote-footer text-right mb-1 mr-1'>
-								On ",date("d F y", strtotime($row_arr[8]['post_date']))," by <a href='blogpagev2.php?prof_id=",$row_arr[8]['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row_arr[8]['post_author'],"</cite></a>
+								On ",date("d F y", strtotime($row_arr[8]['post_date']))," by <cite title='Source Title'>",$row_arr[8]['post_author'],"</cite>
 							</footer>
 						</div>
 					</div>
