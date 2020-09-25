@@ -115,7 +115,7 @@ CREATE TABLE `user` (
   `ts` date NOT NULL,
   `status` int(1) NOT NULL DEFAULT 0,
   `token` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`

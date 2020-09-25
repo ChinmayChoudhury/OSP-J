@@ -17,7 +17,7 @@ session_start();
         // input validations
         // register number validation
         if (!preg_match("/^([6789]{1}[0-9]{9})$/", $_POST['phnum'])) {
-            $_SESSION['regErr'] = "<p>Invalid register number. Eg: 18BIT0100(case sensitive)</p>"; $flag = true;
+            $_SESSION['phErr'] = "<p>phone number invalid</p>"; $flag = true;
         }
         // email validation
         if (!filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)) {
@@ -67,16 +67,15 @@ session_start();
             // hash password, by default it uses bcrypt(5) AND generate token to be used for acc activation
 
             $passhash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $tokenhash = md5(uniqid(rand(), true));
+            // $tokenhash = md5(uniqid(rand(), true));
 
-            $stmt = $pdo->prepare('INSERT INTO user(usern, phnum, email, passwd, dob, token, ts, status,fname,lname) VALUES (:user, :ph, :em, :pass, :db, :tokhash, NOW(), :statvar, :fnvar,:lnvar)');
+            $stmt = $pdo->prepare('INSERT INTO user(usern, phnum, email, passwd, dob, token, ts, status,fname,lname) VALUES (:user, :ph, :em, :pass, :db,  NOW(), :statvar, :fnvar,:lnvar)');
             $stmt->execute(array(
                 ':user'=>$_POST['username'],
                 ':ph'=>$_POST['phnum'],
                 ':em'=>$_POST['email'],
                 ':pass'=>$passhash,
                 ':db'=>$_POST['dob'],
-                ':tokhash' => $tokenhash,
                 'statvar' => "1",
                 ':fnvar' => $_POST['fname'],
                 ':lnvar' => $_POST['lname']
@@ -136,9 +135,9 @@ session_start();
                         echo $_SESSION['unfillErr'];
                         unset($_SESSION['unfillErr']);
                     }
-                    if (isset($_SESSION['regErr'])) {
-                        echo $_SESSION['regErr'];
-                        unset($_SESSION['regErr']);
+                    if (isset($_SESSION['phErr'])) {
+                        echo $_SESSION['phErr'];
+                        unset($_SESSION['phErr']);
                     }
                     if (isset($_SESSION['emailErr'])) {
                         echo $_SESSION['emailErr'];
