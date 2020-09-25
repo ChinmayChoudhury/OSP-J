@@ -224,8 +224,8 @@
 	 //    			}
   //   		</style>	
 		// ";
-		echo "<div class = 'container'><h1 class='col-12 text-center mt-4' id='blogtitle'>" . ucwords($row['post_title']). "</h1>" . "<div class='col-12 mr-2 proflinks'>- " . date("d F y", strtotime($row['post_date']))." by <a href='blogpagev2.php?prof_id=" . $row["post_author_id"] ."'>" . $row['post_author'].
-			"</a></div><br><br>" .
+		echo "<div class = 'container'><h1 class='col-12 text-center mt-4' id='blogtitle'>" . ucwords($row['post_title']). "</h1>" . "<div class='col-12 mr-2 proflinks'>- " . date("d F y", strtotime($row['post_date']))." by " . $row['post_author'].
+			"</div><br><br>" .
 
 			htmlspecialchars_decode($row['post_content']) . 
 			"</div>"; 
