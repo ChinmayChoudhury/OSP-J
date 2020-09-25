@@ -1,0 +1,83 @@
+
+/*--Header--*/
+.header1 {
+    font-family: merriweather,serif;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.header2 {
+    font-family: merriweather,serif;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+
+/*--navbar--*/
+
+
+.navbar {
+    border-top: 1px #333333 ridge;
+    /*border-bottom: 1px #333333 ridge;*/
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-nav > li {
+    float: left;
+    position: relative;
+}
+
+.navbar-light .navbar-nav .active a::after {
+    border-bottom: 2px solid #000000;
+    bottom: -10px;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+li, a, ul {
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+a:hover { 
+    color: #333333; 
+}
+
+.active {
+    text-decoration: underline;
+}
+
+/*--Footer--*/
+.custom1 {
+    background-color: #FFFFFF;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+.frow {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.footer1 {
+    font-family: merriweather,serif;
+    font-weight: 400;
+    font-style: normal;
+    border-top: 1px #333333 ridge;
+    vertical-align: middle;
+}
+
+.fa2 {
+    margin-top: 0.1em;
+    margin-right: 0.3em;
+    color:black;
+    font-size: 3em;
+}

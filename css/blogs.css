@@ -1,0 +1,54 @@
+/*html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}*/
+
+/* BLOGPAGE COMMPONENTS */
+
+.card-columns {
+    display: inline-block;
+}
+
+.card-title {
+    font-family: 'Merriweather', sans-serif;
+    color: #000;
+    font-size: 25px;
+}
+
+.card-text {
+    font-family: 'Muli', sans-serif;
+    color: #000;
+    font-size: 17px;
+}
+
+.card {
+    background-color: #fff;
+    transition: transform .5s; /* Animation */
+}
+
+.page-link {
+    color: #000000;
+    border: 0px;
+}
+
+.card:hover {
+    transform: scale(1.1); /* Animation */
+    z-index: 1;
+}
+
+.nodecorat:hover{
+    text-decoration: none;
+}
+
+/*makes sure that images are of proper size and doesn't go beyond div(container)*/
+img{
+    /*float: right;*/
+    max-width: 100%;
+    height: auto;
+    /*display: block;*/
+}
+
+#blogtitle{
+    font-family: Muli,Merriweather, Helvetica, sans-serif;
+    font-weight: bold;
+}

@@ -1,0 +1,86 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* This is to replace original arrow of select in add post form.
+	reference=> https://stackoverflow.com/a/43867308/13621845 
+*/
+
+
+
+select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none; 
+        background-color: #ffffff !important;
+    }
+
+
+select + i.fa {
+    float: right;
+    margin-top: -26px;
+    margin-right: 10px;
+    /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+    pointer-events: none;
+    /* everything after this is just to cover up the original arrow */
+    /* (for browsers that don't support the syntax used above) */
+    background-color: transparent;
+    color:black!important;
+    padding-right: 5px;
+}
+
+select option{
+	padding-right: 21px;
+}
+
+.btn{
+	font-family: 'Muli', sans-serif;
+	font-weight: bolder;
+}
+
+/*for pagination*/
+.page-link {
+    color: #000000;
+    border: 0px;
+}
+
+.pagination{
+    justify-content: center;
+}
+
+
+.pill{
+    border-radius: 25px;
+}
+
+#formCon{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+.btn{
+    border-radius: 25px;
+    background-color:#000 ;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#errorfield{
+    color: red;
+}
+
+.row-small {
+    font-size: 12px;
+    font-style: italic;
+    color: #666;
+}
+
+table{
+    font-family: 'Muli';
+}

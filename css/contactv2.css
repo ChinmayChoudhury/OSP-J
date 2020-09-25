@@ -1,0 +1,19 @@
+.pill{
+	border-radius: 25px;
+}
+
+#formCon{
+	text-align: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+.btn{
+	border-radius: 25px;
+	background-color:#000 ;
+	color: white;
+	font-family: futura-pt, sans-serif;
+	font-weight: bold;
+}

@@ -1,0 +1,38 @@
+body .custom1 {
+    background-color: #FFFFFF;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+
+
+
+#form1 {   
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-family: 'Muli', sans-serif;
+    color: #000;
+}
+
+.btn{
+    font-family: futura-pt, sans-serif;
+    font-weight: bold;    /*letter-spacing: .1em;*/
+}
+
+.pill {
+    border-radius: 25px;
+}
+
+.black-bg {
+    background-color: #000;
+}
+
+
+a:hover { 
+    color: #333333; 
+}
+
+.active {
+    text-decoration: underline;
+}
