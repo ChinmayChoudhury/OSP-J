@@ -66,11 +66,46 @@
             </div>
         </div>
     </nav>
-    
-    <h1 class="text-center">Covid 19 Dashboard</h1>
-    <p class="text-center">API data will be shown here.</p>
-    <br><br><br><br><br><br><br><br><br><br>
 
+    <h1 class="text-center">Covid 19 Dashboard</h1>
+    <!-- <p class="text-center">API data will be shown here.</p> -->
+
+    <!-- Fetching and displaying data from the API -->
+    <!-- <div class="row mt-5"> -->
+    <?php
+        $tdata = json_decode(file_get_contents('https://api.covid19india.org/data.json'),true);
+        $data = $tdata['statewise'];
+        //0 index has total values, other indexes have state/UT data
+    ?>
+<div class="container">
+    <div class="col-12 mt-md-3 ">
+        <table class="table thead-light">
+            <tr>
+                <th>State</th>
+                <th>Confirmed</th>
+                <th>Deceased</th>
+                <th>Recovered</th>
+                <!-- <th>Tested</th> -->
+            </tr>
+        <?php
+            // $data = json_decode(file_get_contents('https://api.covid19india.org/v4/data.json'),true);
+            foreach ($data as $key=>$state) {
+                if ($state['state'] == "Total" || $state['state'] == "State Unassigned" || $state['state'] == "Lakshadweep") {
+                    continue;
+                }
+                echo "<tr>"; //create a row for each state data
+                echo "<td>" . $state['state'] . "</td>"; //state
+                echo "<td>" . $state['confirmed'] . "</td>"; //confirmed cases in state
+                echo "<td>" . $state['deaths'] . "</td>"; //deaths in state
+                echo "<td>" . $state['recovered'] . "</td>"; //total recovered in state
+                // echo "<td>" . $state[] . "</td>"; //total people tested in the state
+                echo "</tr>";  //close the row for the state
+                // print_r($val['total']['confirmed']);
+            }
+        ?>
+        </table>
+    </div>
+</div>
     <?php
         include_once 'footerv2.php';
     ?>
