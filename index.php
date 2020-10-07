@@ -12,17 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
-
-    <!-- Bootstrap CSS -->
-       <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/header_footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Muli:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/kkb7kdd.css">
-    <title>Covid-19 Dashboard</title>
+    <title>Covid-19 Dasboard</title>
 </head>
 
 <body>
@@ -54,6 +50,7 @@
 
                 <span class="nav-item">
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="/blogpagev2.php">Blogs</a></li>
                         <?php if(!isset($_SESSION['user'])){?>
                         <li class="nav-item"><a class="nav-link" href="/signinv2.php">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="/registerv2.php">Register</a></li>
@@ -67,8 +64,9 @@
         </div>
     </nav>
 
+<div class="container">
     <h1 class="text-center">Covid 19 Dashboard</h1>
-    <!-- <p class="text-center">API data will be shown here.</p> -->
+    <!-- API data will be shown here. -->
 
     <!-- Fetching and displaying data from the API -->
     <!-- <div class="row mt-5"> -->
@@ -77,35 +75,42 @@
         $data = $tdata['statewise'];
         //0 index has total values, other indexes have state/UT data
     ?>
-<div class="container">
-    <div class="col-12 mt-md-3 ">
-        <table class="table thead-light">
-            <tr>
-                <th>State</th>
-                <th>Confirmed</th>
-                <th>Deceased</th>
-                <th>Recovered</th>
-                <!-- <th>Tested</th> -->
-            </tr>
-        <?php
-            // $data = json_decode(file_get_contents('https://api.covid19india.org/v4/data.json'),true);
-            foreach ($data as $key=>$state) {
-                if ($state['state'] == "Total" || $state['state'] == "State Unassigned" || $state['state'] == "Lakshadweep") {
-                    continue;
-                }
-                echo "<tr>"; //create a row for each state data
-                echo "<td>" . $state['state'] . "</td>"; //state
-                echo "<td>" . $state['confirmed'] . "</td>"; //confirmed cases in state
-                echo "<td>" . $state['deaths'] . "</td>"; //deaths in state
-                echo "<td>" . $state['recovered'] . "</td>"; //total recovered in state
-                // echo "<td>" . $state[] . "</td>"; //total people tested in the state
-                echo "</tr>";  //close the row for the state
-                // print_r($val['total']['confirmed']);
-            }
-        ?>
-        </table>
+    <!-- <div class="row"> -->
+        <span><i>Last updated on: <?= $data[0]['lastupdatedtime'] ?></i></span>
+        &nbsp;&nbsp;
+        <a href="index.php"><i class="fa fa-refresh" aria-hidden="true"></i></a><br>
+        <a href="/statewise.php">See statewise data</a>
+        <div class="mt-4 mb-5">
+        <div class="row">
+            <div class="col-6 text-center h-25 p-3 confirmed" >
+                <h3>Confirmed</h3>
+
+                <span class="numbers"><?= $data[0]['confirmed']?></span><br>
+                <span class="smallnumbers">+<?= $data[0]['deltaconfirmed']?></span>
+
+            </div>
+            <div class="col-6 text-center h-25 p-3 activec" >
+                <h3>Active</h3>
+                <span class="numbers"><?= $data[0]['active']?></span><br><br>
+
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col-6 text-center h-25 p-3 recovered" >
+                <h3>Recovered</h3>
+                <span class="numbers"><?= $data[0]['recovered']?></span><br>
+                <span class="smallnumbers">+<?= $data[0]['deltarecovered']?></span> 
+            </div>
+            <div class="col-6 text-center h-25 p-3 death" >
+                <h3>Deaths</h3>
+                <span class="numbers"><?= $data[0]['deaths']?></span><br>
+                <span class="smallnumbers">+<?= $data[0]['deltadeaths']?></span> 
+            </div>
+        </div>
     </div>
+    <!-- </div> -->
 </div>
+
     <?php
         include_once 'footerv2.php';
     ?>

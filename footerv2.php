@@ -1,5 +1,5 @@
 
- <footer class="footer1">
+ <footer class="footer1" >
         <div class="row">
             <div class="col-12 col-md-3 m-5 d-none d-md-block text-center">
                 <img src="img/logo.png" height="160" width="150" alt="VBC" class="float-right img-fluid d-block">

@@ -1,6 +1,54 @@
 html, body {
     max-width: 100%;
+    /*height: 100%;*/
     overflow-x: hidden;
+}
+html{
+    /*position: relative;*/
+}
+body{
+    display: flex;
+    flex-flow: column;
+}
+
+.refresh{
+    color: white;
+    font-family: 'Muli',futura-pt, sans-serif;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: #000;
+}
+.numbers{
+    font-family:  sans-serif;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+.smallnumbers{
+    font-family: 'Muli',  sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.confirmed{
+    color: #ff073a;
+    /*background-color: lightgray;*/
+}
+
+.activec{
+    color: #007bff;
+    /*background-color: lightgray;*/
+
+}
+
+.recovered{
+    color:#28a745;
+    /*background-color: lightgray*/
+}
+
+.death{
+    /*background-color: lightgray;*/
+    color: #6c757d; 
 }
 
 .custom1 {
@@ -99,9 +147,14 @@ a:hover {
 .footer1 {
     font-family: merriweather,serif;
     font-weight: 400;
+    color: black;
     font-style: normal;
     border-top: 1px #333333 ridge;
     vertical-align: middle;
+    /*height: 60px;*/
+    /*bottom: 0;*/
+    /*position: absolute;*/
+    /*margin-top: auto;*/
 }
 
 .fa2 {

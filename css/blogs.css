@@ -17,7 +17,8 @@
 
 .card-text {
     font-family: 'Muli', sans-serif;
-    color: #000;
+    color: #000123;
+    /*color: red;*/
     font-size: 17px;
 }
 
