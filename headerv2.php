@@ -33,10 +33,10 @@ $_SESSION['LAST_ACTIVITY'] = time();
 													Categories
 												</a>
 												<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-													<a class="dropdown-item" href="#">By Doctors</a>
-													<a class="dropdown-item" href="#">By Astrologer</a>
-													<a class="dropdown-item" href="#">Personal Experiences</a>
-													<a class="dropdown-item" href="#">By Frontliners</a>                
+													<a class="dropdown-item" href="/blogpagev2.php?catid=1">By Doctors</a>
+													<a class="dropdown-item" href="/blogpagev2.php?catid=2">By Astrologer</a>
+													<a class="dropdown-item" href="/blogpagev2.php?catid=3">Personal Experiences</a>
+													<a class="dropdown-item" href="/blogpagev2.php?catid=4">By Frontliners</a>                
 												</div>
 										</li>
 

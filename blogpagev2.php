@@ -34,7 +34,9 @@
         if (!$_REQUEST || isset($_REQUEST['page']) || isset($_REQUEST['postid'])) {
             require_once 'blogsv2.php'; 
         }
-        // if (isset($_REQUEST['pid']))
+        if (isset($_REQUEST['catid'])){
+            require_once 'blogsv2.php';
+        }
     ?>
 
 	<?php require_once 'footerv2.php'; ?>

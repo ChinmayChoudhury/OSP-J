@@ -1,6 +1,49 @@
 <?php
 	require_once 'DB/pdo.php';
 
+	//show blogs of a category
+	if(isset($_GET['catid'])){
+		//determine which category
+		$cat = '';
+		switch ($_GET['catid']) {
+			case '1':
+				$cat = "By Doctors";
+				break;
+			case '2':
+				$cat = "By Astrologers";
+				break;
+			case '3':
+				$cat = "Personal Experiences";
+				break;
+			case '4':
+				$cat = "By Frontliners";
+				break;
+		}
+
+		echo "<h2 class='text-center'>". $cat . "</h2>";
+
+		$query = 'SELECT * FROM `posts` WHERE `post_status` = 1 AND post_category_id = '. $_GET['catid'] .'  ORDER BY `post_id` DESC ' ;
+		$stmt = $pdo->prepare($query);
+		$stmt->execute();
+		echo "<div class='row fadeIn a1 mt-5'>" . "<div class='col-10 offset-1 col-md-8 offset-md-2'>". "<div class='card-columns'>";
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<div class='card'>
+                        <a href='blogpagev2.php?postid=",$row['post_id'],"' class='nodecorat'>
+                            <img class='card-img-top' src='",$row['post_img'],"' alt=''>
+                            <div class='card-body'>
+                                <h5 class='card-title'>",ucwords($row['post_title']),"</h5>
+                                <p class='card-text'>",html_entity_decode(trim($row['post_incerpt'])),"</p>
+                        </a>
+                            <footer class='blockquote-footer text-right mb-1 mr-1'>
+                                On ",date("d F y", strtotime($row['post_date']))," by <a href='blogpagev2.php?prof_id=",$row['post_author_id'],"' class='proflinks'><cite title='Source Title'>",$row['post_author'],"</cite></a>
+                            </footer>
+                        </div>
+                    </div>";
+            // print_r($row);
+        }
+        echo "</div></div></div>";
+	}
+
 
 	if(!$_REQUEST || isset($_REQUEST['page'])){
 		$res_per_page = 9;
@@ -217,19 +260,14 @@
 		$stmt = $pdo->prepare('SELECT * FROM posts WHERE post_id = :postidvar');
 		$stmt->execute(array(":postidvar"=>$_GET['postid']));
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-		// echo "<style>
-		// 		img{
-	 //    			max-width: 100%;
-	 //    			height: auto;
-	 //    			}
-  //   		</style>	
-		// ";
+		
 		echo "<div class = 'container'><h1 class='col-12 text-center mt-4' id='blogtitle'>" . ucwords($row['post_title']). "</h1>" . "<div class='col-12 mr-2 proflinks'>- " . date("d F y", strtotime($row['post_date']))." by " . $row['post_author'].
 			"</div><br><br>" .
 
 			htmlspecialchars_decode($row['post_content']) . 
 			"</div>"; 
 	}
+
 	
 ?>
 <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
