@@ -24,6 +24,15 @@
     <?php include_once 'headerv2.php'; ?>
 
     <?php
+        //get user location based on IP address
+
+        $user_ip = getenv('REMOTE_ADDR');
+        $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=47.247.8.58"));
+        $country = $geo["geoplugin_countryName"];
+        $state_name = $geo["geoplugin_region"];
+        $state_code = $geo["geoplugin_regionCode"];
+
+        //get COVID data from API 
         $tdata = json_decode(file_get_contents('https://api.covid19india.org/data.json'),true);
         $data = $tdata['statewise'];
         //0 index has total values, other indexes have state/UT data
@@ -33,6 +42,9 @@
     <span><i>Last updated on: <?= $data[0]['lastupdatedtime'] ?></i></span>
         &nbsp;&nbsp;
     <a href="statewise.php"><i class="fa fa-refresh" aria-hidden="true"></i></a><br>
+
+        <br>
+    <span><i>Your state: <?= $state_name ?> (<?= $state_code?>)</i></span>
     <!-- <p class="text-center">API data will be shown here.</p> -->
 
     <!-- Fetching and displaying data from the API -->
@@ -52,7 +64,13 @@
                 if ($state['state'] == "Total" || $state['state'] == "State Unassigned" || $state['state'] == "Lakshadweep") {
                     continue;
                 }
-                echo "<tr>"; //create a row for each state data
+
+                $class = '';
+                if ($state['state'] == $state_name) {
+                    $class = "class = 'table-active'";
+                }
+
+                echo "<tr ".$class.">"; //create a row for each state data
                 echo "<td>" . $state['state'] . "</td>"; //state
                 echo "<td>" . $state['confirmed'] . "</td>"; //confirmed cases in state
                 echo "<td>" . $state['deaths'] . "</td>"; //deaths in state

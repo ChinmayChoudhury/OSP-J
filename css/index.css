@@ -11,6 +11,10 @@ body{
     flex-flow: column;
 }
 
+.curr_state{
+    color: red; !important
+}
+
 .refresh{
     color: white;
     font-family: 'Muli',futura-pt, sans-serif;
